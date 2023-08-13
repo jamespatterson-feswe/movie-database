@@ -6,7 +6,7 @@ function HeaderFooter({ params }): React.JSX.Element {
   const isHeader = !!params.header;
 
   const headingRef = useRef(null);
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(false);
   useEffect(() => {
     if (isHeader && !checked) {
       (headingRef?.current as any)?.focus();
@@ -31,7 +31,9 @@ function HeaderFooter({ params }): React.JSX.Element {
         <div className={`flexed ${isHeader ? "bar header" : "footer"}`}>
           {isHeader ? (
             <>
-              <h1 className="heading-1" ref={headingRef}>Movie Database</h1>
+              <h1 className="heading-1" ref={headingRef}>
+                Movie Database
+              </h1>
             </>
           ) : (
             "® xRzy"
