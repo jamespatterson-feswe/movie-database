@@ -1,48 +1,50 @@
 .flexed {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .tool {
-    background-color: #1877F2;
+  background-color: #1877f2;
 
-    height: 10vh;
-    width: 100vw;
+  height: 10vh;
+  width: 100vw;
 
-    .header {
-        font-size: x-large;
-        font-weight: 700;
+  .header {
+    font-size: x-large;
+    font-weight: 700;
+  }
+
+  .footer {
+    font-size: smaller;
+    font-weight: 400;
+  }
+
+  .bar {
+    width: 95vw;
+    float: right;
+  }
+
+  .menu-btn-container,
+  .btn {
+    width: 5vw;
+  }
+
+  .btn {
+    filter: invert(99%) sepia(6%) saturate(542%) hue-rotate(76deg)
+      brightness(117%) contrast(100%);
+    margin-left: 1.5vw;
+    width: 3.5vw;
+
+    &:hover {
+      margin-left: 1vw;
+      width: 5vw;
     }
 
-    .footer {
-        font-size: smaller;
-        font-weight: 400;
+    &:active {
+      margin-left: 1.5vw;
+      width: 3.5vw;
     }
-
-    .bar {
-        width: 95vw;
-        float: right;
-    }
-
-    .menu-btn-container, .btn {
-        width: 5vw;
-    }
-
-    .btn {
-        filter: invert(99%) sepia(6%) saturate(542%) hue-rotate(76deg) brightness(117%) contrast(100%);
-        margin-left: 1.5vw;
-        width: 3.5vw;
-
-        &:hover {
-            margin-left: 1vw;
-            width: 5vw;
-        }
-
-        &:active {
-            margin-left: 1.5vw;
-            width: 3.5vw;
-        }
-    }
+  }
 }
