@@ -1,15 +1,14 @@
+import React from "react";
+import HeaderFooter from "../header-footer/header-footer";
+import Movies from "../movies/movies";
+
 function Main() {
-    return (
-      <main>
-          <header className="header">
-              <h1>Movie Database</h1>
-          </header>
-          <section>
-            this is where content will go
-          </section>
-      </main>
-    );
-  }
-  
-  export default Main;
-  
+  return (
+    <main>
+      <HeaderFooter />
+      <Movies />
+    </main>
+  );
+}
+
+export default Main;
