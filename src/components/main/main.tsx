@@ -6,11 +6,11 @@ import Movies from "../movies/movies";
 function Main() {
   return (
     <main>
-      <HeaderFooter props={{ header: true }}/>
+      <HeaderFooter params={{ header: true }}/>
       <section className="container">
         <Movies />
       </section>
-      <HeaderFooter props={{ footer: true }}/>
+      <HeaderFooter params={{ footer: true }}/>
     </main>
   );
 }
