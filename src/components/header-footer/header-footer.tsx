@@ -1,14 +1,15 @@
 import React from "react";
 
-function HeaderFooter() {
+function HeaderFooter({ props }) {
   return (
-    <main>
-      <header className="header">
-        <section>
-          <h1>Movie Database</h1>
-        </section>
-      </header>
-    </main>
+    <section>
+      {
+        !!props.header && 'Header'
+      }
+      {
+        !props.header && 'Footer'
+      }
+    </section>
   );
 }
 

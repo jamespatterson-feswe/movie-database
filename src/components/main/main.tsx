@@ -5,8 +5,9 @@ import Movies from "../movies/movies";
 function Main() {
   return (
     <main>
-      <HeaderFooter />
+      <HeaderFooter props={{ header: true }}/>
       <Movies />
+      <HeaderFooter props={{ footer: true }}/>
     </main>
   );
 }
