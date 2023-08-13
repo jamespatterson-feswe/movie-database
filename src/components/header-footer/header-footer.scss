@@ -34,5 +34,15 @@
         filter: invert(99%) sepia(6%) saturate(542%) hue-rotate(76deg) brightness(117%) contrast(100%);
         margin-left: 1.5vw;
         width: 3.5vw;
+
+        &:hover {
+            margin-left: 1vw;
+            width: 5vw;
+        }
+
+        &:active {
+            margin-left: 1.5vw;
+            width: 3.5vw;
+        }
     }
 }
