@@ -1,14 +1,10 @@
 import React from "react";
 
 function HeaderFooter({ props }) {
+  const type = !!props.header ? 'Header' : 'Footer';
   return (
     <section>
-      {
-        !!props.header && 'Header'
-      }
-      {
-        !props.header && 'Footer'
-      }
+      {type}
     </section>
   );
 }
