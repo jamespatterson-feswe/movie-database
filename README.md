@@ -17,3 +17,6 @@ Needs to be ran after a commit, will run prettier, and push latest code from las
 
 ### React
 Typescript, HTML, SCSS
+
+## Description
+Small Desktop/tablet/mobile application
