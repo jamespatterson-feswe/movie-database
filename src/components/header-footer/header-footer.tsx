@@ -1,11 +1,12 @@
 import React from "react";
 import './header-footer.scss'
 
-function HeaderFooter({ props }): React.JSX.Element {
-  const type = !!props.header ? 'Header' : 'Footer';
+function HeaderFooter({ params }): React.JSX.Element {
+  const isHeader = !!params.header;
+
   return (
-    <section className="toolbar">
-      {type}
+    <section className={`toolbar ${isHeader ? 'header' : 'footer'}`}>
+      {isHeader ? 'Header' : '® xRzy'}
     </section>
   );
 }
