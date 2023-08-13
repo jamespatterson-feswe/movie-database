@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import btn from "../../assets/menu-btn.png";
 import "./header-footer.scss";
 
 function HeaderFooter({ params }): React.JSX.Element {
   const isHeader = !!params.header;
+
+  const headingRef = useRef(null);
+  const [checked, setChecked] = useState(false)
+  useEffect(() => {
+    if (isHeader && !checked) {
+      (headingRef?.current as any)?.focus();
+      setChecked(true);
+    }
+  }, [isHeader, checked]);
 
   return (
     <>
@@ -22,7 +31,7 @@ function HeaderFooter({ params }): React.JSX.Element {
         <div className={`flexed ${isHeader ? "bar header" : "footer"}`}>
           {isHeader ? (
             <>
-              <h1>Movie Database</h1>
+              <h1 className="heading-1" ref={headingRef}>Movie Database</h1>
             </>
           ) : (
             "® xRzy"
