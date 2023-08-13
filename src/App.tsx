@@ -1,7 +1,7 @@
 import "./App.scss";
 import Main from "./components/main/main";
 
-function App() {
+function App(): React.JSX.Element {
   return Main();
 }
 
