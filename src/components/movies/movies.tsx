@@ -45,7 +45,7 @@ function Movies(): React.JSX.Element {
         _movies.push({
           ..._movie,
           Title: title.replace(" " + year, ""),
-          NotFound: "https://via.placeholder.com/400",
+          NotFound: process.env.REACT_APP_NOT_FOUND_URL,
           Year: year,
         });
       }
