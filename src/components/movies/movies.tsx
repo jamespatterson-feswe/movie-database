@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Movie from '../movie/movie'
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
@@ -54,8 +55,9 @@ function Movies(): React.JSX.Element {
   }
   return (
     <div>
-      {movies.map((m) => (
-        <div>{(m as any)?.Title} {(m as any)?.Year}</div>
+      {movies.map((movie, index) => (
+        // <div>{(m as any)?.Title} {(m as any)?.Year}</div>
+        <Movie key={`key_${index}`} movie={movie}></Movie>
       ))}
     </div>
   );

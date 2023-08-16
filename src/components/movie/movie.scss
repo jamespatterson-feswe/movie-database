@@ -1,0 +1,23 @@
+.main {
+    background-color: lightgray;
+    overflow: auto;
+    font-size: large;
+    margin: 20px 0;
+}
+
+
+.not-found {
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+}
+
+#img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 2vw;
+}
