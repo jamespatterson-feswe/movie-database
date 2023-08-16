@@ -23,12 +23,6 @@ function Movie(movie: any) {
 
 export default Movie;
 
-const MovieNotFound = (props) =>{
-  return (
-      <h3 className="not-found">No movies found</h3>
-  );
-}
-
 /**
  * @function MovieDetails
  * @description to build out a bootstrap movie card title

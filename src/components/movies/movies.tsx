@@ -55,12 +55,19 @@ function Movies(): React.JSX.Element {
   }
   return (
     <div>
-      {movies.map((movie, index) => (
-        // <div>{(m as any)?.Title} {(m as any)?.Year}</div>
-        <Movie key={`key_${index}`} movie={movie}></Movie>
-      ))}
+      { !movies.length ? <MovieNotFound /> :
+        movies.map((movie, index) => (
+            <Movie key={`key_${index}`} movie={movie}></Movie>
+        ))
+      }
     </div>
   );
 }
 
 export default Movies;
+
+const MovieNotFound = (props) =>{
+  return (
+      <h1 className="not-found">No movies found</h1>
+  );
+}
