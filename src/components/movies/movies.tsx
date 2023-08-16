@@ -3,19 +3,22 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 
-const __key__ =
-  '{"apiKey": "AIzaSyCUWmkooTsrXVagXY0qXxWKfsft_6Pi77Q", "authDomain": "movie-database-8e789.firebaseapp.com", "projectId": "movie-database-8e789", "storageBucket": "movie-database-8e789.appspot.com", "messagingSenderId": "875132263224", "appId": "1:875132263224:web:b3ad416bf39becaf1b3fcd", "measurementId": "G-SQKD044VTB"}';
-const config = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG || __key__);
-const firebase = initializeApp(config);
-export const db = getFirestore(firebase);
+const __key__ = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
+};
 const _movie = { Poster: "N/A", Type: "movie", imdbID: "" };
-const _movies: any[] = [];
 
 function Movies(): React.JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [rawData, setRawData] = useState(null);
-  const moviesCollectionRef = collection(db, "movies");
+  const moviesCollectionRef = collection(getFirestore(initializeApp(JSON.parse(JSON.stringify(__key__)))), "movies");
 
   useEffect(() => {
     if (!isLoading) {
@@ -29,9 +32,9 @@ function Movies(): React.JSX.Element {
   }, []);
 
   if (isLoading) {
-    if ((((rawData || [])[0] || {}) as any)?.list || "") {
-      const raw = JSON.parse((((rawData || [])[0] || {}) as any)?.list);
-      _movies.length = 0;
+    if ((rawData?.[0] as any)?.list) {
+      const _movies: any[] = [];
+      const raw = JSON.parse((rawData?.[0] as any)?.list);
       for (let i = 0, iLen = raw.length; i < iLen; i++) {
         // eslint-disable-next-line no-useless-escape
         const title = raw[i].slice(0, -5).replace('"', "");
