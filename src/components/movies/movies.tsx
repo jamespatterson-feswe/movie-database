@@ -56,7 +56,7 @@ function Movies(): React.JSX.Element {
   return (
     <div>
       {movies.map((m) => (
-        <div>{(m as any)?.Title}</div>
+        <div>{(m as any)?.Title} {(m as any)?.Year}</div>
       ))}
     </div>
   );
