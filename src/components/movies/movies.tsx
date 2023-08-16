@@ -12,7 +12,6 @@ const __key__ = {
   appId: process.env.REACT_APP_APP_ID,
   measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
-const _movie = { Poster: "N/A", Type: "movie", imdbID: "" };
 
 function Movies(): React.JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +42,7 @@ function Movies(): React.JSX.Element {
             ? title.slice(title.indexOf("("))
             : "";
         _movies.push({
-          ..._movie,
+          ...{ Poster: "N/A", Type: "movie", imdbID: "" },
           Title: title.replace(" " + year, ""),
           NotFound: process.env.REACT_APP_NOT_FOUND_URL,
           Year: year,
