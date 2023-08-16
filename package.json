@@ -21,7 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "push": "cd src && npx prettier --write . && cd .. && git push",
+    "prettier": "cd src && npx prettier --write .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
