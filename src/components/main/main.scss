@@ -1,6 +1,12 @@
 .container {
   overflow-y: auto;
   background-color: #6c757d;
-  height: 80vh;
+  height: 75vh;
   width: 100vw;
+}
+
+input {
+  height: 5vh;
+  width: 100vw;
+  text-align: center;
 }
