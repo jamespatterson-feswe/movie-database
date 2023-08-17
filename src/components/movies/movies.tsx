@@ -15,7 +15,7 @@ const __key__ = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-function Movies(): React.JSX.Element {
+function Movies(searchTerm: string): React.JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [rawData, setRawData] = useState(null);

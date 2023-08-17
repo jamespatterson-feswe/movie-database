@@ -22,7 +22,7 @@ function Main() {
         </input>
       </div>
       <section className="container">
-        <Movies />
+        <Movies searchTerm={searchTerm}/>
       </section>
       <HeaderFooter params={{ footer: true }} />
     </main>
