@@ -20,6 +20,12 @@ function Movies(): React.JSX.Element {
   const [movies, setMovies] = useState([]);
   const [rawData, setRawData] = useState(null);
 
+  function filterMovies(term) {
+    return movies.filter((m: any) =>
+      (m?.Title ?? '').toLowerCase().includes(term) ||
+      (m?.Year ?? '').toLowerCase().includes(term));
+  }
+
   useEffect(() => {
     if (!isLoading) {
       const getMoviesFromFirestore = async () => {
