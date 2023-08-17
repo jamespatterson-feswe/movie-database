@@ -1,6 +1,5 @@
 import React from "react";
 import "./movie.scss";
-import { Spacer } from "./spacer/spacer";
 
 function Movie(movie: any) {
   // return <div>{movie.movie.Title} {movie.movie.Year}</div>;

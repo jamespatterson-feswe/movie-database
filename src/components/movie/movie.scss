@@ -1,3 +1,5 @@
+@import '../../mixins/mixins.scss';
+
 .card {
   display: flex;
   flex-direction: row;
@@ -26,7 +28,7 @@
 
     border-radius: 20px 20px 0 0;
 
-    @media (max-width: 767px) {
+    @include mobile {
       width: 90vw;
     }
 
@@ -35,7 +37,7 @@
       background-size: contain;
       display: flex;
       justify-content: center;
-      @media (max-width: 767px) {
+      @include mobile {
         margin-bottom: 4vw;
       }
     }
@@ -43,7 +45,7 @@
     .img {
       width: 90%;
       margin-bottom: 5%;
-      @media (max-width: 767px) {
+      @include mobile {
         width: 80vw;
       }
     }
