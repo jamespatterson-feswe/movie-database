@@ -1,6 +1,5 @@
 import React from "react";
 import "./movie.scss";
-import { Image } from "./image/image";
 import { Spacer } from "./spacer/spacer";
 
 function Movie(movie: any) {
@@ -9,10 +8,9 @@ function Movie(movie: any) {
   return (
     <>
       <div className="card">
-        <Spacer />
         <div className="body">
-          <p>{getDetails([Title])}</p>
-          <p>{getDetails([Year])}</p>
+          <p className="title">{getDetails([Title])}</p>
+          <p className="year">{getDetails([Year])}</p>
           <div className="img-container">
             <img
               className="img"
@@ -21,7 +19,6 @@ function Movie(movie: any) {
             ></img>
           </div>
         </div>
-        <Spacer />
       </div>
     </>
   );

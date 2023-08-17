@@ -1,7 +1,3 @@
-p {
-  margin: 0;
-}
-
 .card {
   display: flex;
   flex-direction: row;
@@ -14,9 +10,15 @@ p {
       margin-top: 10px;
     }
     margin-bottom: 10px;
+    text-align: center;
+
+    &.year {
+      font-size: small;
+    }
   }
 
   .body {
+    text-shadow: #6C757D 1px 0 10px;
     background-color: #23272f;
     display: flex;
     flex-direction: column;
@@ -31,11 +33,18 @@ p {
     .img-container {
       display: block;
       background-size: contain;
+      display: flex;
+      justify-content: center;
+      @media (max-width: 767px) {
+        margin-bottom: 4vw;
+      }
     }
 
     .img {
+      width: 90%;
+      margin-bottom: 5%;
       @media (max-width: 767px) {
-        width: 90vw;
+        width: 80vw;
       }
     }
   }
