@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Movie from '../movie/movie'
+import "./movies.scss";
+import Movie from "../movie/movie";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
@@ -11,19 +12,23 @@ const __key__ = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 function Movies(): React.JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [rawData, setRawData] = useState(null);
-  const moviesCollectionRef = collection(getFirestore(initializeApp(JSON.parse(JSON.stringify(__key__)))), "movies");
 
   useEffect(() => {
     if (!isLoading) {
       const getMoviesFromFirestore = async () => {
-        const data = await getDocs(moviesCollectionRef);
+        const data = await getDocs(
+          collection(
+            getFirestore(initializeApp(JSON.parse(JSON.stringify(__key__)))),
+            "movies",
+          ),
+        );
         setRawData(data.docs.map((d) => ({ ...d.data(), id: d.id })) as any);
         setIsLoading(true);
       };
@@ -54,20 +59,20 @@ function Movies(): React.JSX.Element {
     }
   }
   return (
-    <div>
-      { !movies.length ? <MovieNotFound /> :
+    <div className="movies">
+      {!movies.length ? (
+        <MovieNotFound />
+      ) : (
         movies.map((movie, index) => (
-            <Movie key={`key_${index}`} movie={movie}></Movie>
+          <Movie key={`key_${index}`} movie={movie}></Movie>
         ))
-      }
+      )}
     </div>
   );
 }
 
 export default Movies;
 
-const MovieNotFound = (props) =>{
-  return (
-      <h1 className="not-found">No movies found</h1>
-  );
-}
+const MovieNotFound = () => {
+  return <h1 className="not-found">No movies found</h1>;
+};

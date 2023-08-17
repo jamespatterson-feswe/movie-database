@@ -1,23 +1,42 @@
-.main {
-    background-color: lightgray;
-    overflow: auto;
-    font-size: large;
-    margin: 20px 0;
+p {
+  margin: 0;
 }
 
+.card {
+  display: flex;
+  flex-direction: row;
 
-.not-found {
-    text-align: center;
-}
+  font-size: large;
+  margin: 20px 0;
 
-#title {
-    text-align: center;
-    text-shadow: 2px 2px 5px black;
-}
+  p {
+    &:first-child {
+      margin-top: 10px;
+    }
+    margin-bottom: 10px;
+  }
 
-#img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 2vw;
+  .body {
+    background-color: #23272f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 20px 20px 0 0;
+
+    @media (max-width: 767px) {
+      width: 90vw;
+    }
+
+    .img-container {
+      display: block;
+      background-size: contain;
+    }
+
+    .img {
+      @media (max-width: 767px) {
+        width: 90vw;
+      }
+    }
+  }
 }

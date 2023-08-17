@@ -1,4 +1,6 @@
-import React from 'react';
-import './spacer.scss';
+import React from "react";
+import "./spacer.scss";
 
-export const Spacer = () => { return ( <div className="spacer"></div> ); }
+export const Spacer = () => {
+  return <div className="spacer"></div>;
+};

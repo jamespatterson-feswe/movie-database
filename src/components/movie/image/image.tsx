@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const Image = (props) => {
   return (
@@ -6,4 +6,4 @@ export const Image = (props) => {
       <img className="card-img-top" src={props.source} alt={props.Title}></img>
     </>
   );
-}
+};
